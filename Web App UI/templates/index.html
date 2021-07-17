@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>BDA project</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type = 'text/css' href="{{ url_for('static', filename='css/style.css') }}">
+        <style>
+               h1 {
+	                  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+                      background-size: 400% 400%;
+	                  animation: gradient 5s ease infinite;
+                      height: 100px;
+                      width: 100%;
+                      text-align: center;
+                      font-size: 75px;
+                      color: rgb(51, 49, 49) ;
+
+}
+
+             body{
+                  background-color: rgba(90, 58, 58, 0.93);
+                  color: white;
+                 text-align: center;
+                 }
+
+             input{
+                  background-color: rgba(0,0,0,0.5);
+                  height: 50px;
+                  width: 200px;
+                 color: white;
+                 margin: 50px;
+
+             }
+             .text{
+
+                 text-align: center;
+             }
+             .btn{
+                 height: 50px;
+                  width: 200px;
+                 margin: 50px;
+
+
+             }
+
+        </style>
+
+</head>
+
+<body>
+<form action="{{ url_for('predict')}}"method="post">
+<h1>Predict GDP(per capita)</h1>
+<div class="row ">
+
+    	<input type="text" name="Population" placeholder="Population" required="required" />
+        <input type="text" name="Area (sq. mi.)" placeholder="Area" required="required" />
+        <input type="text" name="Pop. Density (per sq. mi.)" placeholder="Pop Density" required="required" />
+        <input type="text" name="Coastline (coast/area ratio)" placeholder="Coastline ratio" required="required" />
+        <input type="text" name="Net migration" placeholder="Net migration" required="required" />
+        <input type="text" name="Infant mortality (per 1000 births)" placeholder="Infact mortality" required="required" />
+        <input type="text" name="Literacy (%)" placeholder="Literacy" required="required" />
+        <input type="text" name="Phones (per 1000)" placeholder="Phones" required="required" />
+        <input type="text" name="Arable (%)" placeholder="Arable" required="required" />
+        <input type="text" name="Crops (%)" placeholder="Crops" required="required" />
+        <input type="text" name="Other (%)" placeholder="Other" required="required" />
+        <input type="text" name="Birthrate" placeholder="Birthrate" required="required" />
+        <input type="text" name="Deathrate" placeholder="Deathrate" required="required" />
+        <input type="text" name="Agriculture" placeholder="Agriculture" required="required" />
+        <input type="text" name="Industry" placeholder="Industry" required="required" />
+        <input type="text" name="Service" placeholder=" Service" required="required" />
+
+            </div>
+     <button type="submit" class="btn btn-success btn-block btn-large">Predict</button>
+    </form>
+ <div class="login">
+
+
+     <div>
+
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+
+
+
+
+
+        
+        
+
+
+<br>
+   {{ prediction_text }}
+         </div>
+      </div>
+ </div>
+
+
+</body>
+</html>
